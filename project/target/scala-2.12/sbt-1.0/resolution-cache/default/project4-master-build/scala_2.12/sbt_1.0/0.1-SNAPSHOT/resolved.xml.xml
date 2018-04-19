@@ -4,7 +4,7 @@
 		module="project4-master-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20180419141109"
+		publication="20180419161707"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

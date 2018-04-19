@@ -49,8 +49,6 @@ exit
 run
 exit
 run
-exit 
-run
-sbt
+exit
 run
 exit
