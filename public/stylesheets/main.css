@@ -1,0 +1,142 @@
+
+body{
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 90%;
+	background-color: #cccccc;
+}
+li{
+	list-style-type: none;
+}
+span{
+	color: #ff0000;
+	text-decoration: line-through;
+}
+footer{
+	clear: both;
+	padding: 0.25em;
+	font-size: 80%;
+	text-align: center;
+	color: #ffffff;
+	background-color: #0099cf;
+}
+#container{
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+	background-color: #ffffff;
+}
+#banner{
+	display: block;
+	width: 100%;
+}
+.productInfo{
+	width: 100%;
+	clear: both;
+	padding-top: 1em;
+}
+.productImg{
+	float: left;
+	padding-top: 1em;
+	padding-right: 1em;
+}
+.moreInfoBtn{
+	background-color: #00ace6;
+	margin-top: 0.5em;
+	padding: 0.5em 1em 0.5em 1em;
+	text-decoration: none;
+}
+.moreInfo:hover{
+	color: #ffffff;
+}
+
+/*
+ * Columns CSS
+ */
+.outerColDiv{
+	width: 100%;
+	margin: 0.5em;
+	float: left;
+}
+#leftCol{
+	float: left;
+	width: 24.8%;
+}
+#centreCol{
+	float: left;
+	width: 75%;
+}
+#bottomCol{
+	float: left;
+	background-color: #00ace6;
+}
+/*
+ * End of Columns CSS
+ */
+ h3, h4
+ {
+	 color: #ff0000;
+ }
+ #PhoneInfo1
+ { float:left;
+ }
+
+/*
+ * Dropdown menu/navbar CSS
+ */
+#navbar{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #00ace6;
+}
+.dropdown{
+	margin-left: 4em;
+	margin-right: 4em;
+}
+li{
+	float: left;
+}
+li a, .dropbtn{
+	display: inline-block;
+	color: #ffffff;
+	text-align: center;
+	padding: 0.8em;
+	text-decoration: none;
+}
+li a:hover, .dropdown:hover .dropbtn{
+	background-color: #e600e6;
+}
+li.dropdown{
+	display: inline-block;
+}
+.dropcontent{
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 10em;
+	box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2);
+}
+.dropcontent a{
+	color: black;
+	padding: 0.8em 1em;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+.dropcontent a:hover{
+	background-color: #f1f1f1;
+}
+.dropdown:hover .dropcontent{
+	display: block;
+}
+a:visited{
+	text-decoration: none;
+}
+/*
+ * End of Dropdown menu/navbar CSS
+ */
