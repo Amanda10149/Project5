@@ -37,7 +37,7 @@ Seq[Any](format.raw/*1.27*/("""
 	<head>
 		
 		<meta charset="UTF-8">
-		<title>CA2</title>
+		<title>Computer Hub</title>
 		<link rel="stylesheet" type="text/css" href=""""),_display_(/*9.49*/routes/*9.55*/.Assets.versioned("stylesheets/myStyles.css")),format.raw/*9.100*/("""">
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -179,10 +179,10 @@ Seq[Any](format.raw/*1.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Apr 19 13:28:21 IST 2018
-                  SOURCE: /home/wdd/Downloads/Project3-my_new_branch/app/views/index.scala.html
-                  HASH: 81dcfee76c0da67006cd2b45a1ef80a413cad141
-                  MATRIX: 959->1|1079->26|1106->27|1261->156|1275->162|1341->207
+                  DATE: Mon Apr 23 12:06:08 IST 2018
+                  SOURCE: /home/wdd/webapps/FinishedProject/app/views/index.scala.html
+                  HASH: 8af4acd50bbe012dc882e8554a4b9b137d704fdd
+                  MATRIX: 959->1|1079->26|1106->27|1270->165|1284->171|1350->216
                   LINES: 28->1|33->1|34->2|41->9|41->9|41->9
                   -- GENERATED --
               */

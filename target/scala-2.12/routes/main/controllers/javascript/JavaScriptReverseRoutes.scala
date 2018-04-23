@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/wdd/Downloads/Project4-master/conf/routes
-// @DATE:Thu Apr 19 16:17:55 IST 2018
+// @SOURCE:/home/wdd/webapps/FinishedProject/conf/routes
+// @DATE:Mon Apr 23 12:06:07 IST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -40,7 +40,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
+    // @LINE:20
+    def addQuestionSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addQuestionSubmit",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addQuestionSubmit"})
+        }
+      """
+    )
+  
+    // @LINE:22
     def deleteProduct: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deleteProduct",
       """
@@ -152,7 +162,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:23
+  // @LINE:24
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -160,7 +170,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:23
+    // @LINE:24
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

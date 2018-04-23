@@ -1,4 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/wdd/Downloads/Project3-my_new_branch/app/views/login.scala.html:13:32: method globalError in class Form is deprecated: see corresponding Javadoc for more information.[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wdd/webapps/FinishedProject/app/views/login.scala.html:13:32: method globalError in class Form is deprecated: see corresponding Javadoc for more information.[0m
 [0m[[0m[33mwarn[0m] [0m[0m                    @loginForm.globalError.message[0m
 [0m[[0m[33mwarn[0m] [0m[0m                               ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

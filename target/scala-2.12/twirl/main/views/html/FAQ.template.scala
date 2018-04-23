@@ -22,17 +22,17 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object FAQ extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[models.Product],models.users.User,play.twirl.api.HtmlFormat.Appendable] {
+object FAQ extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Form[models.Question],models.users.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(products: List[models.Product], user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(QuestionForm : Form[models.Question], user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
+/*2.2*/import helper._
 
 
-Seq[Any](format.raw/*1.59*/("""
-
-
+Seq[Any](format.raw/*1.65*/("""
+"""),format.raw/*3.1*/("""
 """),format.raw/*4.1*/("""<html>
 	<head>
 		
@@ -118,9 +118,36 @@ Seq[Any](format.raw/*1.59*/("""
     </div>
 						</div>
 					
-					</div>
+          </div>
+          """),_display_(/*90.12*/main("Add Question", user)/*90.38*/ {_display_(Seq[Any](format.raw/*90.40*/("""
+            """),format.raw/*91.13*/("""<p class="lead">Ask a question</p>
+        
+            """),_display_(/*93.14*/form(action=routes.HomeController.addQuestionSubmit(), 'class -> "form-horizontal", 'role -> "form")/*93.114*/{_display_(Seq[Any](format.raw/*93.115*/("""
+                """),format.raw/*94.45*/("""
+                """),format.raw/*95.107*/("""
+                """),_display_(/*96.18*/CSRF/*96.22*/.formField),format.raw/*96.32*/("""
+        
+        
+                """),_display_(/*99.18*/inputText(QuestionForm("name"), '_label -> "Name", 'class -> "form-control")),format.raw/*99.94*/("""
+                """),_display_(/*100.18*/inputText(QuestionForm("email"), '_label -> "Email", 'class -> "form-control")),format.raw/*100.96*/("""
+                """),_display_(/*101.18*/inputText(QuestionForm("question"), '_label -> "Question", 'class -> "form-control")),format.raw/*101.102*/("""
+               
+        
+               
+        
+        
+                """),format.raw/*107.17*/("""<div class="actions">
+                        <input type="submit" value="AddQuestion" class="btn btn-primary">
+                        <a href=""""),_display_(/*109.35*/routes/*109.41*/.HomeController.FAQ),format.raw/*109.60*/("""">
+                            <button type="button" class="btn btn-warning"> Cancel </button>
+                        
+                        </a>
+                </div>
+            """)))}),format.raw/*114.14*/("""   
+        """)))}),format.raw/*115.10*/("""
+          
 					
-					<div id="centreCol">
+					"""),format.raw/*118.6*/("""<div id="centreCol">
 						<div class="outerColDiv">
 							<div>
 <!-- Accordain -->
@@ -144,44 +171,23 @@ Seq[Any](format.raw/*1.59*/("""
 var acc = document.getElementsByClassName("accordion");
 var i;
 
-for (i = 0; i < acc.length; i++) """),format.raw/*115.34*/("""{"""),format.raw/*115.35*/("""
-  """),format.raw/*116.3*/("""acc[i].addEventListener("click", function() """),format.raw/*116.47*/("""{"""),format.raw/*116.48*/("""
-    """),format.raw/*117.5*/("""this.classList.toggle("active");
+for (i = 0; i < acc.length; i++) """),format.raw/*142.34*/("""{"""),format.raw/*142.35*/("""
+  """),format.raw/*143.3*/("""acc[i].addEventListener("click", function() """),format.raw/*143.47*/("""{"""),format.raw/*143.48*/("""
+    """),format.raw/*144.5*/("""this.classList.toggle("active");
     var panel = this.nextElementSibling;
-    if (panel.style.maxHeight)"""),format.raw/*119.31*/("""{"""),format.raw/*119.32*/("""
-      """),format.raw/*120.7*/("""panel.style.maxHeight = null;
-    """),format.raw/*121.5*/("""}"""),format.raw/*121.6*/(""" """),format.raw/*121.7*/("""else """),format.raw/*121.12*/("""{"""),format.raw/*121.13*/("""
-      """),format.raw/*122.7*/("""panel.style.maxHeight = panel.scrollHeight + "px";
-    """),format.raw/*123.5*/("""}"""),format.raw/*123.6*/(""" 
-  """),format.raw/*124.3*/("""}"""),format.raw/*124.4*/(""");
-"""),format.raw/*125.1*/("""}"""),format.raw/*125.2*/("""
-"""),format.raw/*126.1*/("""</script>
+    if (panel.style.maxHeight)"""),format.raw/*146.31*/("""{"""),format.raw/*146.32*/("""
+      """),format.raw/*147.7*/("""panel.style.maxHeight = null;
+    """),format.raw/*148.5*/("""}"""),format.raw/*148.6*/(""" """),format.raw/*148.7*/("""else """),format.raw/*148.12*/("""{"""),format.raw/*148.13*/("""
+      """),format.raw/*149.7*/("""panel.style.maxHeight = panel.scrollHeight + "px";
+    """),format.raw/*150.5*/("""}"""),format.raw/*150.6*/(""" 
+  """),format.raw/*151.3*/("""}"""),format.raw/*151.4*/(""");
+"""),format.raw/*152.1*/("""}"""),format.raw/*152.2*/("""
+"""),format.raw/*153.1*/("""</script>
 
 
 
 											<!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">Ask a Question</h2>
-  <div class="row">
-    
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 							</div>
 						</div>
 					</div>
@@ -205,9 +211,9 @@ for (i = 0; i < acc.length; i++) """),format.raw/*115.34*/("""{"""),format.raw/*
     }
   }
 
-  def render(products:List[models.Product],user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(products,user)
+  def render(QuestionForm:Form[models.Question],user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(QuestionForm,user)
 
-  def f:((List[models.Product],models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (products,user) => apply(products,user)
+  def f:((Form[models.Question],models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (QuestionForm,user) => apply(QuestionForm,user)
 
   def ref: this.type = this
 
@@ -216,11 +222,11 @@ for (i = 0; i < acc.length; i++) """),format.raw/*115.34*/("""{"""),format.raw/*
 
               /*
                   -- GENERATED --
-                  DATE: Thu Apr 19 13:28:21 IST 2018
-                  SOURCE: /home/wdd/Downloads/Project3-my_new_branch/app/views/FAQ.scala.html
-                  HASH: 36b90f19c26301c2cbff8cea0cf55e2ce9009d82
-                  MATRIX: 978->1|1130->58|1159->61|1297->173|1311->179|1377->224|4602->3420|4632->3421|4663->3424|4736->3468|4766->3469|4799->3474|4932->3578|4962->3579|4997->3586|5059->3620|5088->3621|5117->3622|5151->3627|5181->3628|5216->3635|5299->3690|5328->3691|5360->3695|5389->3696|5420->3699|5449->3700|5478->3701
-                  LINES: 28->1|33->1|36->4|41->9|41->9|41->9|147->115|147->115|148->116|148->116|148->116|149->117|151->119|151->119|152->120|153->121|153->121|153->121|153->121|153->121|154->122|155->123|155->123|156->124|156->124|157->125|157->125|158->126
+                  DATE: Mon Apr 23 12:14:03 IST 2018
+                  SOURCE: /home/wdd/webapps/FinishedProject/app/views/FAQ.scala.html
+                  HASH: 57e59c88234cdad5c9f19bb303cdb7504b56c96e
+                  MATRIX: 979->1|1115->66|1160->64|1187->83|1214->84|1352->196|1366->202|1432->247|4174->2962|4209->2988|4249->2990|4290->3003|4374->3060|4484->3160|4524->3161|4569->3206|4615->3313|4660->3331|4673->3335|4704->3345|4767->3381|4864->3457|4910->3475|5010->3553|5056->3571|5163->3655|5268->3731|5442->3877|5458->3883|5499->3902|5716->4087|5761->4100|5812->4123|6327->4609|6357->4610|6388->4613|6461->4657|6491->4658|6524->4663|6657->4767|6687->4768|6722->4775|6784->4809|6813->4810|6842->4811|6876->4816|6906->4817|6941->4824|7024->4879|7053->4880|7085->4884|7114->4885|7145->4888|7174->4889|7203->4890
+                  LINES: 28->1|31->2|34->1|35->3|36->4|41->9|41->9|41->9|122->90|122->90|122->90|123->91|125->93|125->93|125->93|126->94|127->95|128->96|128->96|128->96|131->99|131->99|132->100|132->100|133->101|133->101|139->107|141->109|141->109|141->109|146->114|147->115|150->118|174->142|174->142|175->143|175->143|175->143|176->144|178->146|178->146|179->147|180->148|180->148|180->148|180->148|180->148|181->149|182->150|182->150|183->151|183->151|184->152|184->152|185->153
                   -- GENERATED --
               */
           

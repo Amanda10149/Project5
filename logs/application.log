@@ -1,12 +1,11 @@
-2018-04-19 16:29:31,285 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
-2018-04-19 16:29:31,335 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:h2:file:./data/productsDB
-2018-04-19 16:29:32,184 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-7 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2018-04-19 16:29:32,386 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2018-04-23 12:25:07,150 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
+2018-04-23 12:25:07,249 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:h2:file:./data/productsDB
+2018-04-23 12:25:07,937 [WARN] from io.ebeaninternal.server.deploy.BeanDescriptorManager in play-dev-mode-akka.actor.default-dispatcher-6 - Bean [models.Question] has no unique id set
+2018-04-23 12:25:08,989 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-6 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-04-23 12:25:09,422 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-6 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2018-04-19 16:29:32,393 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev)
-2018-04-19 16:29:38,446 [INFO] from play.core.server.AkkaHttpServer in pool-13-thread-3 - Stopping server...
-2018-04-19 16:29:38,495 [INFO] from application in pool-13-thread-3 - Shutting down connection pool.
+2018-04-23 12:25:09,439 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev)

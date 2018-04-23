@@ -70,11 +70,31 @@ public class HomeController extends Controller {
 
     public Result FAQ() {
         
-        List<Product> productList = Product.findAll();
+        Form<Question> newQuestionForm = formFactory.form(Question.class);
 
-        return ok(views.html.FAQ.render(productList, User.getUserById(session().get("email"))));
+        return ok(views.html.FAQ.render(newQuestionForm, User.getUserById(session().get("email"))));
 
     }
+
+    public Result addQuestionSubmit() {
+        
+                Form<Question> newQuestionForm = formFactory.form(Question.class).bindFromRequest();
+        
+                if (newQuestionForm.hasErrors()) {
+                    return badRequest(views.html.FAQ.render(newQuestionForm, User.getUserById(session().get("email"))));
+        
+                }else {
+                    Question newQuestion = newQuestionForm.get();
+        
+                    newQuestion.save();
+                    
+                    flash("success", "Question "+ newQuestion.getName() + "was Submitted");
+        
+                    return redirect(controllers.routes.HomeController.FAQ());
+                    
+                
+                }
+            }
 
 
     public Result Laptop() {

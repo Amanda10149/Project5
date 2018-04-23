@@ -1,11 +1,11 @@
-@(products: List[models.Product], user: models.users.User)
-
+@(QuestionForm : Form[models.Question], user: models.users.User)
+@import helper._ 
 
 <html>
 	<head>
 		
 		<meta charset="UTF-8">
-		<title>Computer Hub</title>
+		<title>CA2</title>
 		<link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/myStyles.css")">
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -86,7 +86,34 @@
     </div>
 						</div>
 					
-					</div>
+          </div>
+          @main("Add Question", user) {
+            <p class="lead">Ask a question</p>
+        
+            @form(action=routes.HomeController.addQuestionSubmit(), 'class -> "form-horizontal", 'role -> "form"){
+                @* CSRF attack prevention *@
+                @* This token, send by the controller, will be used to authenticate the form bubmission *@
+                @CSRF.formField
+        
+        
+                @inputText(QuestionForm("name"), '_label -> "Name", 'class -> "form-control")
+                @inputText(QuestionForm("email"), '_label -> "Email", 'class -> "form-control")
+                @inputText(QuestionForm("question"), '_label -> "Question", 'class -> "form-control")
+               
+        
+               
+        
+        
+                <div class="actions">
+                        <input type="submit" value="AddQuestion" class="btn btn-primary">
+                        <a href="@routes.HomeController.FAQ">
+                            <button type="button" class="btn btn-warning"> Cancel </button>
+                        
+                        </a>
+                </div>
+            }   
+        }
+          
 					
 					<div id="centreCol">
 						<div class="outerColDiv">
@@ -128,28 +155,7 @@ for (i = 0; i < acc.length; i++) {
 
 
 											<!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">Ask a Question</h2>
-  <div class="row">
-    
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 							</div>
 						</div>
 					</div>
