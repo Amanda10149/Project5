@@ -57,3 +57,8 @@ compile
 run
 h2-browser
 run
+git push -u master
+git push -u https://github.com/Amanda10149/Project5 master
+git config --global push.default current
+git push 
+run
